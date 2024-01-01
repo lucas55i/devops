@@ -1,0 +1,7 @@
+Hello
+
+Email de teste com bot em python utilizando o outlook com smpt
+
+
+
+Bora LUCAS VC CONSEGUE

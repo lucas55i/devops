@@ -1,0 +1,2 @@
+Verfica se host informado já está registrado em algum inventario.retona true se já estiver registrado se não estiver chama a função includeHostInventory.
+se não retorna false e informa que não foi possivel fazer o regitro.

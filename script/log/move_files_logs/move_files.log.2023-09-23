@@ -1,0 +1,85 @@
+2023-09-23T19:53:23.576926-03:00	[    INFO]	=====START=====
+2023-09-23T19:56:34.656843-03:00	[    INFO]	=====START=====
+2023-09-23T19:56:34.659683-03:00	[   ERROR]	Is Not Directory.
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 73, in main
+    moveFiles = MoveFiles(args.source_folder, args.destination_folder, args.file_format)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 14, in __init__
+    raise ValueError("Is Not Directory.")
+ValueError: Is Not Directory.
+2023-09-23T19:56:34.661776-03:00	[    INFO]	======END======
+2023-09-23T19:57:14.496465-03:00	[    INFO]	=====START=====
+2023-09-23T19:57:14.500488-03:00	[    INFO]	======END======
+2023-09-23T19:58:46.484563-03:00	[    INFO]	=====START=====
+2023-09-23T19:58:46.492174-03:00	[    INFO]	======END======
+2023-09-23T19:58:52.760007-03:00	[    INFO]	=====START=====
+2023-09-23T19:58:52.763054-03:00	[   ERROR]	Is Not Directory.
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 84, in main
+    moveFiles = MoveFiles(args.source_folder, args.destination_folder, args.file_format)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 25, in __init__
+    raise ValueError("Is Not Directory.")
+ValueError: Is Not Directory.
+2023-09-23T19:58:52.765717-03:00	[    INFO]	======END======
+2023-09-23T19:58:57.221325-03:00	[    INFO]	=====START=====
+2023-09-23T19:58:57.224388-03:00	[    INFO]	======END======
+2023-09-23T20:02:58.959563-03:00	[    INFO]	=====START=====
+2023-09-23T20:02:58.962501-03:00	[   ERROR]	'str' object is not callable
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 91, in main
+    moveFiles = MoveFiles(args.source_folder, args.destination_folder, args.file_format)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 34, in __init__
+    self.source_folder()
+TypeError: 'str' object is not callable
+2023-09-23T20:02:58.964483-03:00	[    INFO]	======END======
+2023-09-23T20:03:00.365384-03:00	[    INFO]	=====START=====
+2023-09-23T20:03:00.368570-03:00	[   ERROR]	'str' object is not callable
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 91, in main
+    moveFiles = MoveFiles(args.source_folder, args.destination_folder, args.file_format)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 34, in __init__
+    self.source_folder()
+TypeError: 'str' object is not callable
+2023-09-23T20:03:00.370745-03:00	[    INFO]	======END======
+2023-09-23T20:05:08.282225-03:00	[    INFO]	=====START=====
+2023-09-23T20:05:08.285020-03:00	[    INFO]	Buscando os arquivos no formato: txt.log
+2023-09-23T20:05:08.285338-03:00	[   ERROR]	MoveFiles.searchFile() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 92, in main
+    success = moveFiles.searchFile(data)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: MoveFiles.searchFile() takes 1 positional argument but 2 were given
+2023-09-23T20:05:08.287456-03:00	[    INFO]	======END======
+2023-09-23T20:05:41.862588-03:00	[    INFO]	=====START=====
+2023-09-23T20:05:41.865337-03:00	[    INFO]	Buscando os arquivos no formato: txt.log
+2023-09-23T20:05:41.865486-03:00	[    INFO]	Buscando os arquivos no formato: txt.log
+2023-09-23T20:05:41.865597-03:00	[    INFO]	======END======
+2023-09-23T20:05:44.872834-03:00	[    INFO]	=====START=====
+2023-09-23T20:05:44.876095-03:00	[    INFO]	Buscando os arquivos no formato: txt.log
+2023-09-23T20:05:44.876251-03:00	[    INFO]	Buscando os arquivos no formato: txt.log
+2023-09-23T20:05:44.876400-03:00	[    INFO]	======END======
+2023-09-23T20:05:55.652730-03:00	[    INFO]	=====START=====
+2023-09-23T20:05:55.655734-03:00	[    INFO]	Buscando os arquivos no formato: txt.log
+2023-09-23T20:05:55.655905-03:00	[    INFO]	======END======
+2023-09-23T20:06:25.635263-03:00	[    INFO]	=====START=====
+2023-09-23T20:06:25.638122-03:00	[    INFO]	Buscando os arquivos no formato: txt.log
+2023-09-23T20:06:25.638298-03:00	[    INFO]	======END======
+2023-09-23T20:06:44.939469-03:00	[    INFO]	=====START=====
+2023-09-23T20:06:44.942765-03:00	[    INFO]	Buscando os arquivos no formato: 'txt.log'
+2023-09-23T20:06:44.942938-03:00	[    INFO]	======END======
+2023-09-23T21:02:31.953663-03:00	[    INFO]	=====START=====
+2023-09-23T21:02:31.957668-03:00	[    INFO]	Buscando os arquivos no formato: 'txt.log'
+2023-09-23T21:02:31.957947-03:00	[    INFO]	======END======
+2023-09-23T21:02:36.584467-03:00	[    INFO]	=====START=====
+2023-09-23T21:02:36.587322-03:00	[    INFO]	Buscando os arquivos no formato: 'txt.log'
+2023-09-23T21:02:36.587486-03:00	[    INFO]	======END======
+2023-09-23T21:02:41.641755-03:00	[    INFO]	=====START=====
+2023-09-23T21:02:41.645851-03:00	[    INFO]	Buscando os arquivos no formato: 'txt.log'
+2023-09-23T21:02:41.646021-03:00	[    INFO]	======END======
+2023-09-23T22:46:09.978882-03:00	[    INFO]	=====START=====
+2023-09-23T22:46:09.983337-03:00	[    INFO]	Buscando os arquivos no formato: 'txt.log'
+2023-09-23T22:46:09.983585-03:00	[    INFO]	======END======

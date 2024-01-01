@@ -1,0 +1,66 @@
+2023-09-19T10:02:31.784550-03:00	[    INFO]	=====START=====
+2023-09-19T10:02:31.785279-03:00	[    INFO]	======END=======
+2023-09-19T10:03:21.136788-03:00	[    INFO]	=====START=====
+2023-09-19T10:03:21.137499-03:00	[    INFO]	======END======
+2023-09-19T10:10:01.282974-03:00	[    INFO]	=====START=====
+2023-09-19T10:10:01.283749-03:00	[    INFO]	======END======
+2023-09-19T10:15:28.949809-03:00	[    INFO]	=====START=====
+2023-09-19T10:18:26.080243-03:00	[    INFO]	=====START=====
+2023-09-19T10:18:26.083757-03:00	[    INFO]	======END======
+2023-09-19T10:18:36.784086-03:00	[    INFO]	=====START=====
+2023-09-19T10:18:36.786839-03:00	[    INFO]	======END======
+2023-09-19T10:20:51.617490-03:00	[    INFO]	=====START=====
+2023-09-19T10:20:51.621927-03:00	[   ERROR]	name 'rgs' is not defined
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 72, in main
+    moveFiles = MoveFiles(args.source_folder, rgs.destination_folder, args.file_format)
+                                              ^^^
+NameError: name 'rgs' is not defined
+2023-09-19T10:20:51.624537-03:00	[    INFO]	======END======
+2023-09-19T10:21:00.194438-03:00	[    INFO]	=====START=====
+2023-09-19T10:21:00.197612-03:00	[   ERROR]	module 'os' has no attribute 'isdir'
+2023-09-19T10:21:00.197779-03:00	[    INFO]	======END======
+2023-09-19T10:22:18.635578-03:00	[    INFO]	=====START=====
+2023-09-19T10:22:18.640450-03:00	[   ERROR]	module 'os' has no attribute 'isdir'
+2023-09-19T10:22:18.640745-03:00	[    INFO]	======END======
+2023-09-19T10:22:44.138126-03:00	[    INFO]	=====START=====
+2023-09-19T10:22:44.142557-03:00	[    INFO]	======END======
+2023-09-19T10:22:54.779419-03:00	[    INFO]	=====START=====
+2023-09-19T10:22:54.782211-03:00	[    INFO]	======END======
+2023-09-19T10:23:03.944103-03:00	[    INFO]	=====START=====
+2023-09-19T10:23:03.946858-03:00	[   ERROR]	Is Not Directory.
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 73, in main
+    moveFiles = MoveFiles(args.source_folder, args.destination_folder, args.file_format)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 14, in __init__
+    raise ValueError("Is Not Directory.")
+ValueError: Is Not Directory.
+2023-09-19T10:23:03.951309-03:00	[    INFO]	======END======
+2023-09-19T10:23:18.892498-03:00	[    INFO]	=====START=====
+2023-09-19T10:23:18.895286-03:00	[    INFO]	======END======
+2023-09-19T10:23:47.436518-03:00	[    INFO]	=====START=====
+2023-09-19T10:23:47.439532-03:00	[   ERROR]	unsupported operand type(s) for &: 'str' and 'str'
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 73, in main
+    moveFiles = MoveFiles(args.source_folder, args.destination_folder, args.file_format)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 13, in __init__
+    if not path.isdir(source_folder & destination_folder):
+                      ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for &: 'str' and 'str'
+2023-09-19T10:23:47.441489-03:00	[    INFO]	======END======
+2023-09-19T10:25:08.592914-03:00	[    INFO]	=====START=====
+2023-09-19T10:25:08.596284-03:00	[   ERROR]	Is Not Directory.
+Traceback (most recent call last):
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 73, in main
+    moveFiles = MoveFiles(args.source_folder, args.destination_folder, args.file_format)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucas/Dev/python/scripts/move_files.py", line 14, in __init__
+    raise ValueError("Is Not Directory.")
+ValueError: Is Not Directory.
+2023-09-19T10:25:08.598629-03:00	[    INFO]	======END======
+2023-09-19T10:25:22.128709-03:00	[    INFO]	=====START=====
+2023-09-19T10:25:22.134480-03:00	[    INFO]	======END======
+2023-09-19T10:25:28.343399-03:00	[    INFO]	=====START=====
+2023-09-19T10:25:28.346382-03:00	[    INFO]	======END======
