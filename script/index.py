@@ -16,13 +16,13 @@ severity_map = {
 def get_zabbix_triggers():
     # Configurações de conexão com o Zabbix
     # Substitua 'seu_zabbix' pela URL do seu servidor Zabbix
-    url = 'https://monitoria.capes.gov.br/api_jsonrpc.php'
+    url = ''
     headers = {'Content-Type': 'application/json'}
  
     # Credenciais de acesso ao Zabbix
     # Substitua 'seu_usuario' pelo seu nome de usuário do Zabbix
-    username = 'svc_zabbix_wit'
-    password = 'z@bbixWIT0987'  # Substitua 'sua_senha' pela sua senha do Zabbix
+    username = ''
+    password = ''  # Substitua 'sua_senha' pela sua senha do Zabbix
  
     # Payload da solicitação de autenticação
     payload = {
