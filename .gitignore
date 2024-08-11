@@ -1,6 +1,10 @@
 **/.terraform
 **/.terraform.lock.hcl
+**/.vagrant
 
-*.zip
-.log
+
+**.id_rsa.pub
+**.id_rsa
+**.zip
+**.log
 *.txt
