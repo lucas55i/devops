@@ -6,8 +6,6 @@ Bem-vindo ao repositório de **Projetos de Estudo DevOps**! Este repositório fo
 
 O objetivo deste repositório é fornecer uma coleção de projetos que abrangem diferentes aspectos do DevOps, incluindo:
 
-- **Integração Contínua (CI):** Configuração de pipelines para automação de build, testes e deploy.
-- **Entrega Contínua (CD):** Automação de deploy em diferentes ambientes.
 - **Infraestrutura como Código (IaC):** Provisionamento de infraestrutura utilizando ferramentas como Terraform e Ansible.
 - **Monitoramento e Log:** Configuração de sistemas de monitoramento e coleta de logs.
 - **Containers e Orquestração:** Uso de Docker e Kubernetes para criação e gestão de containers.
