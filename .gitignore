@@ -1,7 +1,7 @@
 **/.terraform
 **/.terraform.lock.hcl
 **/.vagrant
-
+venv
 
 **.id_rsa.pub
 **.id_rsa
