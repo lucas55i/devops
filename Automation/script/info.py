@@ -1,6 +1,3 @@
-# python3 info.py --url "https://test.com" --host_ip "12.123.23" --username "lucas" --password "lucas123"
-# python3 info.py --url "http://54.157.78.58" --inventory_id 2 --host_os "OS.LINUX" --host_ip "12.123.23" --username "admin" --password "&n*Wp,5kpHJ(fZDGz"
-
 import argparse
 import logging
 from datetime import datetime
