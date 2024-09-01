@@ -1,0 +1,17 @@
+---
+bandas:
+  - "black sabbath"
+  - "megadeth"
+  - "ac/dc"
+  - "dio"
+
+cadastro:
+  nome: lucas
+  sobrenome: silva
+  idade: 24
+  endereco:
+    cidade: SP
+    estado: "São Paulo"
+    rua: xyz
+  bandas-preferidas: {{ bandas }}
+...
