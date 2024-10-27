@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: setup-hosts
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      name: setup-hosts
+  template:
+    metadata:
+      labels:
+        name: setup-hosts
+    spec:
+      initContainers:
+      - name: setup-hosts
+        image: busybox
+        command:
+          - /bin/sh
+          - -c
+          - |
+            grep -q jenkins /tmp/etc/hosts || echo '172.21.0.50 argocd.localhost.com jenkins.localhost.com gitea.localhost.com sonarqube.localhost.com harbor.localhost.com' >> /tmp/etc/hosts
+        volumeMounts:
+        - name: etc
+          mountPath: /tmp/etc
+      containers:
+      - name: pause
+        image: gcr.io/google-containers/pause:2.0
+      volumes:
+      - name: etc
+        hostPath:
+          path: /etc
