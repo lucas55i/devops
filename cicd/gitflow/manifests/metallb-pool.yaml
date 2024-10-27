@@ -1,0 +1,17 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: homelab-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.18.0.50-172.18.0.70
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: home-advertisement
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - homelab-pool
