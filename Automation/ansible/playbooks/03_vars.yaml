@@ -1,0 +1,19 @@
+---
+- name: Testando variaveis
+  hosts: debian01
+  vars:
+    message: "Mensagem de teste atraves de varivel"
+    packges: 
+      - htop
+      - vim
+  tasks:
+    - name: DEBUG
+      ansible.builtin.debug:
+        msg: "{{ message }}"
+
+    - name: Debian | Install packges
+      ansible.builtin.apt:
+        name: "{{ packges }}"
+        state: latest
+
+...

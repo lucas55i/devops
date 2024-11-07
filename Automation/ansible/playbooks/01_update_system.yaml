@@ -1,0 +1,17 @@
+---
+# - name: Update Rocky Linux Servers - Starting Deploy
+#   hosts: rocky01
+#   tasks:
+#     - name: DFN | Update System
+#       ansible.builtin.dfn:
+#         name: "*"
+#         state: latest
+#         update_cache: yes
+
+- name: Update Debian Linux Servers - Starting Deploy
+  hosts: debian01
+  tasks:
+    - name: Debian Like | Update
+      ansible.builtin.apt: name="*" state=latest
+
+...

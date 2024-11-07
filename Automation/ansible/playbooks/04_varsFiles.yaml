@@ -1,0 +1,13 @@
+---
+- name: Testando variaveis
+  hosts: debian01
+  vars_files: ../playbooks/varsfiles.yaml
+  tasks:
+    - name: Debian | Install packges
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        state: latest
+    - name: DEBUG
+      ansible.builtin.debug:
+        msg: "{{ msg }}"
+...

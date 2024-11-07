@@ -1,0 +1,13 @@
+---
+- name: Criação do diretório LUCAS-PROFETA
+  hosts: debian01
+  vars:
+    dir_name: "LUCAS-PROFETA2"
+  tasks:
+    - name: Criar diretório
+      file:
+        path: "/home/lucas/{{dir_name}}"
+        state: directory
+        mode: '0755'  # Define as permissões (opcional)
+
+...

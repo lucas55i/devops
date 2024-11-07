@@ -1,0 +1,23 @@
+- name: Testing TAG
+  hosts: debian01
+  tasks: 
+    - name: SISOP | Set a hostname
+      ansible.builtin.hostname:
+        name: srv01
+        use: systemd
+      tags: hostname
+
+    - name: SISOP | Disable Selinux (Temp)
+      ansible.builtin.selinux: 
+        state: disabled
+      tags: security
+
+    - name: COPY | Copy ansible.cfg
+      ansible.builtin.copy:
+        src: ../ansible.cfg
+        dest: /home/lucas/LUCAS-PROFETA
+        owner: lucas
+        group: lucas
+        mode: '0644'
+      tags: copy
+...

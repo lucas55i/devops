@@ -1,0 +1,9 @@
+---
+- name: Ansible Facts Vars
+  hosts: debian01
+  tasks:
+    - name: DEBUG | Ansible Facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_all_ipv4_addresses }}"
+
+...
