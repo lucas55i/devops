@@ -13,7 +13,7 @@ resource "aws_cognito_user_pool" "user_pool" {
   }
 
   verification_message_template {
-    default_email_option = "CONFIRM_WITH_CODE"
+    default_email_option = "CONFIRM_testeH_CODE"
     email_subject        = "Account Confirmation"
     email_message        = "Your confirmation code is {####}"
   }
@@ -43,10 +43,10 @@ resource "aws_cognito_user_pool" "user_pool" {
   }
 
   tags = {
-    author      = "lucasdscdje@algartech.com" # Alterar para o nome de quem está  implantando
+    author      = "lucasdscdje@teste.com" # Alterar para o nome de quem está  implantando
     customer    = "Terraform Teste "          # Alterar para o nome do cliente que está sendo implantado
     environment = "dev"                       # dev ou prod
-    project     = "wit5"
+    project     = "teste5"
   }
 
   account_recovery_setting {
@@ -56,7 +56,7 @@ resource "aws_cognito_user_pool" "user_pool" {
     }
   }
 
-  # Users for WIT5 dependencies Schemas
+  # Users for teste5 dependencies Schemas
   schema {
     name                     = "apiuser"
     attribute_data_type      = "Boolean"
@@ -66,7 +66,7 @@ resource "aws_cognito_user_pool" "user_pool" {
   }
 
   schema {
-    name                     = "wit_zabbix"
+    name                     = "teste_zabbix"
     attribute_data_type      = "Boolean"
     mutable                  = true
     required                 = false
@@ -82,23 +82,23 @@ resource "aws_cognito_user_pool" "user_pool" {
   }
 }
 
-# Users for WIT5 dependencies
+# Users for teste5 dependencies
 resource "aws_cognito_user" "apiuser" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
   username     = "apiuser"
 
   attributes = {
-    email          = "apiuser@hashicorp.com" # Alterar para o e-mail WIT 
+    email          = "apiuser@hashicorp.com" # Alterar para o e-mail teste 
     email_verified = true
   }
 }
 
-resource "aws_cognito_user" "wit_zabbix" {
+resource "aws_cognito_user" "teste_zabbix" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
-  username     = "wit_zabbix"
+  username     = "teste_zabbix"
 
   attributes = {
-    email          = "wit_zabbix@hashicorp.com" # Alterar para o e-mail WIT
+    email          = "teste_zabbix@hashicorp.com" # Alterar para o e-mail teste
     email_verified = true
   }
 }
@@ -108,65 +108,65 @@ resource "aws_cognito_user" "user_powerbi" {
   username     = "user.powerbi"
 
   attributes = {
-    email          = "user.powerbi@hashicorp.com" # Alterar para o e-mail WIT
+    email          = "user.powerbi@hashicorp.com" # Alterar para o e-mail teste
     email_verified = true
   }
 }
 
-# Groups for WIT5 dependencies
-resource "aws_cognito_user_group" "wit_portal_admins" {
-  name         = "wit_portal_admins"
+# Groups for teste5 dependencies
+resource "aws_cognito_user_group" "teste_portal_admins" {
+  name         = "teste_portal_admins"
   user_pool_id = aws_cognito_user_pool.user_pool.id
   description  = "Grupo para os usuários que precisam de permissão de operação do monitoramento e do analytics e de permissão para alterar os usuários e grupos."
 }
 
-resource "aws_cognito_user_group" "wit_portal_monitoring" {
-  name         = "wit_portal_monitoring"
+resource "aws_cognito_user_group" "teste_portal_monitoring" {
+  name         = "teste_portal_monitoring"
   user_pool_id = aws_cognito_user_pool.user_pool.id
   description  = "Grupo para os usuários que precisam de permissão de acesso ás funcionalidades de monitoramento"
 }
 
-# Add apiuser and user_powerbi in wit_portal_admins
-resource "aws_cognito_user_in_group" "add_apiuser_in_wit_portal_admins" {
+# Add apiuser and user_powerbi in teste_portal_admins
+resource "aws_cognito_user_in_group" "add_apiuser_in_teste_portal_admins" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
-  group_name   = aws_cognito_user_group.wit_portal_admins.name
+  group_name   = aws_cognito_user_group.teste_portal_admins.name
   username     = aws_cognito_user.apiuser.username
 }
 
-resource "aws_cognito_user_in_group" "add_user_powerbi_in_wit_portal_admins" {
+resource "aws_cognito_user_in_group" "add_user_powerbi_in_teste_portal_admins" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
-  group_name   = aws_cognito_user_group.wit_portal_admins.name
+  group_name   = aws_cognito_user_group.teste_portal_admins.name
   username     = aws_cognito_user.user_powerbi.username
 }
 
-# Add apiuser, user_powerbi and wit_zabbix in wit_portal_monitoring
-resource "aws_cognito_user_in_group" "add_wit_zabbix_in_wit_portal_monitoring" {
+# Add apiuser, user_powerbi and teste_zabbix in teste_portal_monitoring
+resource "aws_cognito_user_in_group" "add_teste_zabbix_in_teste_portal_monitoring" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
-  group_name   = aws_cognito_user_group.wit_portal_monitoring.name
-  username     = aws_cognito_user.wit_zabbix.username
+  group_name   = aws_cognito_user_group.teste_portal_monitoring.name
+  username     = aws_cognito_user.teste_zabbix.username
 }
 
-resource "aws_cognito_user_in_group" "add_apiuser_in_wit_portal_monitoring" {
+resource "aws_cognito_user_in_group" "add_apiuser_in_teste_portal_monitoring" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
-  group_name   = aws_cognito_user_group.wit_portal_monitoring.name
+  group_name   = aws_cognito_user_group.teste_portal_monitoring.name
   username     = aws_cognito_user.apiuser.username
 }
 
-resource "aws_cognito_user_in_group" "add_user_powerbi_in_wit_portal_monitoring" {
+resource "aws_cognito_user_in_group" "add_user_powerbi_in_teste_portal_monitoring" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
-  group_name   = aws_cognito_user_group.wit_portal_monitoring.name
+  group_name   = aws_cognito_user_group.teste_portal_monitoring.name
   username     = aws_cognito_user.user_powerbi.username
 }
 
 # Client
 resource "aws_cognito_user_pool_client" "client" {
-  name = "WIT 5 - Terraform Dev" # Nome do Cliente
+  name = "teste 5 - Terraform Dev" # Nome do Cliente
 
   user_pool_id                  = aws_cognito_user_pool.user_pool.id
   generate_secret               = true
   refresh_token_validity        = 30
   prevent_user_existence_errors = "ENABLED"
-  callback_urls                 = ["https://gov.api.wit.algar.tech"] # Verificar
+  callback_urls                 = ["https://teste.api.teste.teste."] # Verificar
   supported_identity_providers  = ["COGNITO"]
   # allowed_oauth_flows = ["client_credentials"]
   # allowed_oauth_scopes = ["email", "phone", "openid"]
@@ -198,10 +198,10 @@ resource "aws_cognito_identity_pool" "main" {
   }
 
   tags = {
-    author      = "lucasdscdje@algartech.com" # Alterar para o nome de quem está  implantando
+    author      = "lucasdscdje@teste.com" # Alterar para o nome de quem está  implantando
     customer    = "Terraform Teste "          # Alterar para o nome do cliente que está sendo implantado
     environment = "dev"                       # dev ou prod
-    project     = "wit5"
+    project     = "teste5"
   }
 }
 
@@ -216,7 +216,7 @@ data "aws_iam_policy_document" "authenticated" {
       identifiers = ["cognito-identity.amazonaws.com"]
     }
 
-    actions = ["sts:AssumeRoleWithWebIdentity"]
+    actions = ["sts:AssumeRoletestehWebIdentity"]
 
     condition {
       test     = "StringEquals"
