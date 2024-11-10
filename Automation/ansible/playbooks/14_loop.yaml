@@ -1,0 +1,15 @@
+---
+- name: Ansible Loop
+  hosts: debian01
+  tasks:
+    - name: USER | Add User
+      ansible.builtin.user:
+        name: "{{item}}"
+        state: present
+        groups: "wheel"
+      loop:
+        - eddie
+        - dime
+        - taylor
+
+...
