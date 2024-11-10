@@ -1,0 +1,14 @@
+---
+- name: Ansible Register
+  hosts: debian01
+  tasks:
+    - name: SISOP | Find files
+      ansible.builtin.find:
+        path: /home/lucas/LUCAS-PROFETA
+        patterns: "*.cfg"
+      register: output
+
+    - name: SISOP | Show files
+      ansible.builtin.debug:
+        msg: "{{ output }}"
+...
