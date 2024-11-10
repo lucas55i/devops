@@ -1,0 +1,21 @@
+---
+- name: Block Testing
+  hosts: debian01
+  tasks:
+    - block: # Bloco de tarefas a serem executadas
+      - ansible.builtin.debug:
+            msg: "### EXECUTANDO NORMALMENTE ###"
+      - name: Simulando erros
+        ansible.builtin.shell: ./configure
+        args:
+            chdir: /tmp
+      - ansible.builtin.debug:
+            msg: "Nunca será executado"
+      rescue: # Apenas quando houver um erro
+        - ansible.builtin.debug:
+            msg: "Error - FALHA NO TARGE {{inventory_hostname}}"
+      always: # Sempre será executado
+        - name: SISOP | Update System
+          ansible.builtin.apt: name=* state=latest
+
+...
