@@ -1,0 +1,24 @@
+---
+
+- name: Ansible Conditionals (when)
+  hosts: all
+  tasks:
+    - name: DNF | Update Systems
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_cache: yes
+      when: ansible_distribution  == "Rocky"
+
+    - name: APT | Update cache
+      ansible.builtin.apt:
+        update_cache: yes
+      when: ansible_distribution == "Debian"
+
+    - name: APT | Update Systems
+      ansible.builtin.apt:
+        name: "*"
+        state: latest
+      when: ansible_distribution == "Debian"
+
+...
