@@ -1,0 +1,17 @@
+---
+- name: Ansible Stat
+  hosts: debian01
+  tasks:
+    - name: SISOP | Verificando se o arquivo existe
+      ansible.builtin.stat: path=/home/lucas/LUCAS-PROFETA/aansible.cfg
+      register: file
+
+    - debug:
+        msg: "File found"
+      when: file.stat.exists
+
+    - debug:
+        msg: "File not found"
+      when: file.stat.exists == false
+
+...
