@@ -2,7 +2,7 @@
 **/.terraform.lock.hcl
 **/.vagrant
 venv
-
+.vscode
 **.id_rsa.pub
 **.id_rsa
 **.zip
