@@ -1,0 +1,62 @@
+---
+# route:
+#   receiver: "webhook-receiver"
+#   group_by: ["alertname"]
+
+# templates:
+#   - "/etc/alertmanager/template/notification-template.tmpl"
+
+route:
+  group_by: ['alertname', 'job']
+
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+
+  receiver: discord
+
+receivers:
+- name: discord
+  discord_configs:
+  - webhook_url: "/"
+
+
+# receivers:
+#   - name: "discord"
+#     webhook_configs:
+#       - url: "https://discord.com/api/webhooks/1217147671916183593/WnRErnWvwlMtrQDMgJFR3zogOWNoOi_eCNcK9SeRS2pJWHN8oqD5jhVr71nMuQan3dQe"
+#         message: |
+#           **[{{ .CommonLabels.severity | toUpper }}] {{ .CommonLabels.alertname }}**
+#           {{ if .CommonAnnotations.description }}
+#           Descrição: {{ .CommonAnnotations.description }}
+#           {{ else }}
+#           Sem descrição fornecida.
+#           {{ end }}
+#           Início: {{ .StartsAt }}
+#           {{ if .EndsAt }} Fim: {{ .EndsAt }} {{ end }}
+#           Labels: {{ .CommonLabels }}
+# Ação
+#receivers:
+# - name: 'webhook-receiver'
+#   webhook_configs:
+#     - url: '/https://discord.com/api/webhooks/1217147671916183593/WnRErnWvwlMtrQDMgJFR3zogOWNoOi_eCNcK9SeRS2pJWHN8oqD5jhVr71nMuQan3dQe'
+#       send_resolved: true
+#                  # Enviar notificação ao resolver o alerta
+---
+# route:
+#   receiver: "webhook-receiver"
+#   group_by: ["alertname"]
+
+# # Especificação dos templates
+# templates:
+#   - "/etc/alertmanager/template/notification-template.tmpl"
+
+# # Configuração dos receivers
+# receivers:
+#   - name: "webhook-receiver"
+#     webhook_configs:
+#       - url: "https://discord.com/api/webhooks/1217147671916183593/WnRErnWvwlMtrQDMgJFR3zogOWNoOi_eCNcK9SeRS2pJWHN8oqD5jhVr71nMuQan3dQe"
+#         send_resolved: true
+#         http_config:
+#           headers:
+#             Content-Type: "application/json"

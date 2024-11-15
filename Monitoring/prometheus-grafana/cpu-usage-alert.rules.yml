@@ -1,0 +1,11 @@
+groups:
+  - name: cpu-alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: (1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) by (instance)) * 100 > 8
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Uso elevado de CPU detectado no nó {{ $labels.instance }}"
+          description: "O uso de CPU está acima de 80% por mais de 5 minutos no nó {{ $labels.instance }}."

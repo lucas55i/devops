@@ -1,0 +1,10 @@
+---
+volumeMounts:
+  - name: alertmanager-template
+    mountPath: /etc/alertmanager/template
+
+volumes:
+  - name: alertmanager-template
+    configMap:
+      name: alertmanager-template
+...

@@ -1,0 +1,7 @@
+{{ define "discord.alert" }}
+**Novo Alerta!**
+**Alerta:** {{ .CommonLabels.alertname }}
+**Severidade:** {{ .CommonLabels.severity }}
+**Descrição:** {{ .CommonAnnotations.description }}
+**Início:** {{ .StartsAt }}
+{{ end }}

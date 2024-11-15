@@ -1,0 +1,35 @@
+{
+    "message": {
+        "receiver": "webhook",
+        "status": "firing",
+        "alerts": [
+            {
+                "status": "firing",
+                "labels": {
+                    "alertname": "HighCPUUsage",
+                    "severity": "critical",
+                    "instance": "example-instance"
+                },
+                "annotations": {
+                    "summary": "High CPU usage detected",
+                    "description": "CPU usage has been above 80% for more than 5 minutes."
+                },
+                "startsAt": "2024-10-10T12:34:56Z",
+                "endsAt": "2024-10-10T12:39:56Z",
+                "generatorURL": "http://prometheus:9090/graph?g0.expr=..."
+            }
+        ],
+        "groupLabels": {
+            "alertname": "HighCPUUsage"
+        },
+        "commonLabels": {
+            "alertname": "HighCPUUsage",
+            "severity": "critical"
+        },
+        "commonAnnotations": {
+            "summary": "High CPU usage detected",
+            "description": "CPU usage has been above 80% for more than 5 minutes."
+        },
+        "externalURL": "http://alertmanager:9093"
+    }
+}
