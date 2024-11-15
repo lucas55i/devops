@@ -1,0 +1,15 @@
+---
+- name: Ansible Loop
+  hosts: debian01
+  tasks:
+    - name: APT | Install packges
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - vim
+        - net-tools
+        - screen
+      loop_control:
+        pause: 3 
+...

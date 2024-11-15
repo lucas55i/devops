@@ -1,0 +1,11 @@
+---
+- name: Sequence with_sequence
+  hosts: debian01
+  tasks:
+    - name: USER | Add User
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+        groups: "wheel"
+      with_sequence: start=0 end=9 format=user%x
+...

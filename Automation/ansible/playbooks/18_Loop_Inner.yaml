@@ -1,0 +1,13 @@
+---
+- name: Ansible Loop
+  hosts: debian01
+  tasks:
+    - include_tasks: inner.yaml
+      loop:
+        - 1
+        - 2
+        - 3
+      loop_control:
+        loop_var: outer_item
+
+...
