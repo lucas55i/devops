@@ -1,6 +1,9 @@
 **/.terraform
 **/.terraform.lock.hcl
 **/.vagrant
+**/node_modules
+**/package-lock.json
+
 venv
 .vscode
 **.id_rsa.pub
