@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-and-busy
+  namespace: comunidade-devops
+spec:
+  containers:
+    - name: nginx-and-busy
+      image: nginx:1.14.2
+      ports:
+      - containerPort: 80
+  initContainers:
+  - name: waitfordns
+    image: busybox:1.28
+    command:
+      - sh
+      - -c
+      - until nslookup  mymysql; do echo "Tentando resolver para..."; sleep 1; done
+
