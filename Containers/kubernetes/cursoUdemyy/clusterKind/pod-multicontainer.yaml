@@ -10,3 +10,6 @@ spec:
     name: httpd
   - image: alpine
     name: debug
+    command:
+      - "sleep"
+      - "9999999"
