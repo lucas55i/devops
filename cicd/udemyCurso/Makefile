@@ -8,7 +8,10 @@ pre:
 create:
 	@kind create cluster --config config.yaml
 
-up: create pre
+helm:
+	@helmfile apply 
+
+up: create pre helm
 
 destroy:
 	@kind delete clusters kind
