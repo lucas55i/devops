@@ -7,9 +7,10 @@ repositories:
     url: https://dl.gitea.com/charts
   - name: harbor
     url: https://helm.goharbor.io
+  - name: sonarqube
+    url: https://SonarSource.github.io/helm-chart-sonarqube
 
 releases:
-
   - name: ingress-nginx
     namespace: ingress-nginx
     createNamespace: true
@@ -41,3 +42,11 @@ releases:
     version: 1.16.2
     values:
       - values/harbor/values.yaml
+
+  - name: sonarqube
+    namespace: sonarqube
+    createNamespace: true
+    chart: sonarqube/sonarqube
+    version: 10.4.0+2288
+    values:
+      - values/sonarqube/values.yaml
