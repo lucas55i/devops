@@ -21,7 +21,7 @@ releases:
     namespace: jenkins
     createNamespace: true
     chart: jenkins/jenkins
-    version: 5.0.14
+    version: 5.8.10
     values:
       - values/jenkins/values.yaml
 
