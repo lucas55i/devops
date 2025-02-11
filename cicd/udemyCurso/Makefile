@@ -15,3 +15,7 @@ up: create pre helm
 
 destroy:
 	@kind delete clusters kind
+
+passwd:
+	@echo "Jenkins"
+	@kubectl get secret -n jenkins jenkins -ojson | jq -r '.data."jenkins-admin-password"' | base64 -d
