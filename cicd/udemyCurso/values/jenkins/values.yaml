@@ -790,12 +790,13 @@ controller:
     path:
 
   # -- Allows for adding entries to Pod /etc/hosts
-  hostAliases: []
+  hostAliases: 
+  - ip: 172.18.0.50
+    hostnames:
+      - gitea.localhost.com
+
   # ref: https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/
   # hostAliases:
-  # - ip: 192.168.50.50
-  #   hostnames:
-  #     - something.local
   # - ip: 10.0.50.50
   #   hostnames:
   #     - other.local

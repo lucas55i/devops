@@ -397,7 +397,9 @@ gitea:
     #  RUN_MODE: dev
     server:
       SSH_PORT: 22 # rootful image
-      SSH_LISTEN_PORT: 2222 # rootless image
+      SSH_LISTEN_PORT: 2222 # rootless imag
+    webhook:
+      ALLOWED_HOST_LIST: jenkins.jenkins.svc.cluster.local
   #
   #  security:
   #    PASSWORD_COMPLEXITY: spec
