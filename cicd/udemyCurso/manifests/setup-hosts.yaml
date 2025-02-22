@@ -20,7 +20,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - grep -q jenkins /etc/hosts || echo '172.18.0.4 argocd.localhost.com jenkins.localhost.com sonarqube.localhost.com harbor.localhost.com' >> /tmp/etc/hosts
+            - grep -q jenkins /etc/hosts || echo '172.18.0.4 argocd.localhost.com jenkins.localhost.com sonarqube.localhost.com harbor.localhost.comgitea.localhost.com gitea.localhost.com' >> /tmp/etc/hosts
           volumeMounts:
             - name: etc
               mountPath: /tmp/etc
