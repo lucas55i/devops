@@ -19,3 +19,14 @@ destroy:
 passwd:
 	@echo "Jenkins"
 	@kubectl get secret -n jenkins jenkins -ojson | jq -r '.data."jenkins-admin-password"' | base64 -d
+
+
+kaniko:
+	@docker run -it \
+		--network kind \
+		--entrypoint "" \
+		--add-host harbor.localhost.com:172.18.0.50 \
+		--volume $(pwd)/app:/app \
+		--volume $(pwd)/config.json:/kanico/.docker/config.json \  
+		--workdir /app \
+		gcr.io/kaniko-project/executor:debug sh 
