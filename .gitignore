@@ -129,6 +129,8 @@ ENV/
 env.bak/
 venv.bak/
 
+/jenkins-shared-libraries
+
 # Spyder project settings
 .spyderproject
 .spyproject
