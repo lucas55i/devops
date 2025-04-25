@@ -1,6 +1,6 @@
-# Repositório de Projetos de Estudo DevOps
+# Repositório de Estudo DevOps
 
-Bem-vindo ao repositório de **Projetos de Estudo DevOps**! Este repositório foi criado para compartilhar diversos projetos práticos e teóricos relacionados a DevOps, com o objetivo de facilitar o aprendizado e o desenvolvimento de habilidades nessa área.
+Bem-vindo ao repositório de **Estudo DevOps**! Este repositório foi criado para compartilhar diversos projetos práticos e teóricos relacionados a DevOps, com o objetivo de facilitar o aprendizado e o desenvolvimento de habilidades nessa área.
 
 ## Objetivo
 
