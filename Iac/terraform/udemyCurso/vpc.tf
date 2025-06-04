@@ -3,6 +3,6 @@ resource "aws_vpc" "eks_vpc" {
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name = "comunidadedevops-vpc"
+    Name = "comunidadevops-vpc"
   }
 }
