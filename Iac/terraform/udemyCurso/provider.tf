@@ -13,16 +13,11 @@ terraform {
       version = "3.0.2"
     }
   }
-  backend "s3" {
-    bucket = "comunidadedevops-lpzeus"
-    key    = "dev/terraforma.tfstate"
-    region = "us-east-1"
-  }
 }
 
 provider "aws" {
   # Configuration options
-  region = "us-east-1"
+  region = var.region
 }
 provider "kubernetes" {
   host                   = module.eks_cluster.endpoint
