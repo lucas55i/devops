@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 104b4c22d23e254749279659d8314fcc6f86fe22c28f8d81a1177b41c59da50c
+    cni.projectcalico.org/podIP: 10.233.105.4/32
+    cni.projectcalico.org/podIPs: 10.233.105.4/32
+  name: nginx
+  namespace: default
+spec:
+  containers:
+  - image: nginx:1.14.2
+    name: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-m8v54
+      readOnly: true
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  serviceAccountName: default
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-m8v54
+    projected:
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.namespace
+            path: namespace
