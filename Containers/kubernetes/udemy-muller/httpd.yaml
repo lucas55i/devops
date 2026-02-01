@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: httpd
+    environment: development
+  name: httpd
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 10
+      maxUnavailable: 0
+  replicas: 3
+  selector:
+    matchLabels:
+      app: httpd
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: httpd
+        environment: development
+    spec:
+      containers:
+        - image: nginx
+          name: httpd
+          resources:
+            requests:
+              cpu: 100m
+              memory: 512M
+            limits:
+              cpu: 1
+              memory: 8192M
+
