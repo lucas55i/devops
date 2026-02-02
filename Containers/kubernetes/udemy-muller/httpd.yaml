@@ -26,9 +26,9 @@ spec:
           name: httpd
           resources:
             requests:
-              cpu: 100m
-              memory: 512M
+              cpu: 15m
+              memory: 105M
             limits:
-              cpu: 1
-              memory: 8192M
+              cpu: 1212m
+              memory: 1268M
 

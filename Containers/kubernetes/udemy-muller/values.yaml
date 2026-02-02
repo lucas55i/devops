@@ -9,7 +9,7 @@ vpa:
 
 metrics-server:
   # metrics-server.enabled -- If true, the metrics-server will be installed as a sub-chart
-  enabled: false
+  enabled: true
   apiService:
     create: true
 

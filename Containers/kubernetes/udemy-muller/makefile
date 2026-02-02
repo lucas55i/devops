@@ -1,7 +1,7 @@
 CONTAINERS = \
-	comunidade-devops-control-plane \
-	comunidade-devops-worker \
-	comunidade-devops-worker2
+	study-devops-control-plane \
+	study-devops-worker \
+	study-devops-worker2
 
 .PHONY: stop start restart status
 
@@ -18,5 +18,5 @@ restart: stop start
 
 status:
 	@echo "📦 Status dos containers:"
-	@docker ps -a --filter "name=comunidade-devops"
+	@docker ps -a --filter "name=study-devops"
 
