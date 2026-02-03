@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: oom-deployment
+  name: oom-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oom-deployment
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: oom-deployment
+    spec:
+      containers:
+      - image: valentinomiazzo/jvm-memory-test
+        name: memorytest
+        env:
+          - name: "ALLOC_HEAP_MB"
+            value: "100"
+          - name: "MAX_HEAP_SIZE_MB"
+            value: "2000"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 512M
+          limits:
+            cpu: 1
+            memory: 1G
