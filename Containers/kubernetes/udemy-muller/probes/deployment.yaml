@@ -3,30 +3,33 @@ kind: Deployment
 metadata:
   labels:
     app: nginx
-    environment: development
   name: nginx
   namespace: application
 spec:
-  strategy:
-    rollingUpdate:
-      maxSurge: 10
-      maxUnavailable: 0
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: nginx
-        environment: development
     spec:
       containers:
         - image: nginx
           name: nginx
+          env:
+            - name: ENVIRONMENT
+              value: "development"
+            - name: ALUNO
+              value: "lucas"
           readinessProbe:
             failureThreshold: 3
             httpGet:
-              path: /health
+              path: /
+              port: 80
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
               port: 80
